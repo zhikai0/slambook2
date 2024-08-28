@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/ch1.dir/helloSlam.cpp.o -o ch1 
+/usr/bin/c++ CMakeFiles/ch1.dir/helloSlam.cpp.o -o ch1   -L/workspace/7.intelligent/9.K/10.study/robotstudy/zkai-robot/src/zkai-slambook2/ch1/libs  -Wl,-rpath,/workspace/7.intelligent/9.K/10.study/robotstudy/zkai-robot/src/zkai-slambook2/ch1/libs -llibhello 

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named hello
+
+# Build rule for target.
+hello: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
+.PHONY : hello
+
+# fast build rule for target.
+hello/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
+.PHONY : hello/fast
+
+#=============================================================================
 # Target rules for targets named ch1
 
 # Build rule for target.
@@ -153,6 +166,30 @@ helloSlam.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ch1.dir/build.make CMakeFiles/ch1.dir/helloSlam.cpp.s
 .PHONY : helloSlam.cpp.s
 
+libSlam.o: libSlam.cpp.o
+.PHONY : libSlam.o
+
+# target to build an object file
+libSlam.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/libSlam.cpp.o
+.PHONY : libSlam.cpp.o
+
+libSlam.i: libSlam.cpp.i
+.PHONY : libSlam.i
+
+# target to preprocess a source file
+libSlam.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/libSlam.cpp.i
+.PHONY : libSlam.cpp.i
+
+libSlam.s: libSlam.cpp.s
+.PHONY : libSlam.s
+
+# target to generate assembly for a file
+libSlam.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/libSlam.cpp.s
+.PHONY : libSlam.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +199,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ch1"
+	@echo "... hello"
 	@echo "... helloSlam.o"
 	@echo "... helloSlam.i"
 	@echo "... helloSlam.s"
+	@echo "... libSlam.o"
+	@echo "... libSlam.i"
+	@echo "... libSlam.s"
 .PHONY : help
 
 

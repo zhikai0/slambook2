@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,liblibhello.so -o liblibhello.so CMakeFiles/libhello.dir/libSlam.cpp.o   -L/workspace/7.intelligent/9.K/10.study/robotstudy/zkai-robot/src/zkai-slambook2/ch1/libs 

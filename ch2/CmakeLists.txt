@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(ch2)
+
+# 指定目录并且递归搜索
+FILE(GLOB_RECURSE SRCLIST ./src/*.cpp) 
+
+# 调整库文件输出目录
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/libs)
+
+# 指定头文件所在路径
+include_directories(${PROJECT_SOURCE_DIR}/include
+ ./include/useEigen
+) 
+# 添加Pangolin依赖
+find_package( Pangolin )
+include_directories( ${Pangolin_INCLUDE_DIRS} )
+
+# 生成动态库
+add_library(hello SHARED src/libSlam.cpp)
+# 自定义动态库目录
+link_directories(${PROJECT_SOURCE_DIR}/libs)
+
+# sudo apt install libeigen3-dev后
+include_directories(/usr/include/eigen3)
+
+add_executable(${PROJECT_NAME} ${SRCLIST} main.cpp)
+
+
+target_link_libraries(${PROJECT_NAME} hello ${Pangolin_LIBRARIES})  
