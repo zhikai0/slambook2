@@ -32,3 +32,14 @@ $$
 q = q_0+q_1i+q_2j+q_3k
 \end{equation}
 $$
+
+$$
+\left\{
+\begin{align}
+&i^2=j^2=k^2 \nonumber\\
+&ij=k,ji=-k     \nonumber \\  
+&jk=i,kj=-i \nonumber  \\
+&ki=j,ik=-j \nonumber  \\
+\end{align}
+\right.
+$$
